@@ -1,11 +1,39 @@
 import json
 import requests
 import jwt
+
 from django.http import JsonResponse, HttpResponse
 from django.views import View
-from my_settings import APP_KEY, SECRET
 
-from .models import User 
+from my_settings import APP_KEY, SECRET
+from .models import User, UserDeposit, UserWallet
+from .utils import login_decorator
+
+
+@login_decorator
+class UpdateWallet(View):
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            user = User.objects.get(id=request.user.id)
+            krw_balance = UserWallet.objects.get(user_id=user.id, asset_id=34, market_id=1)
+            update_krw = data['price']
+            side = data['deposit_side']
+            if user.bank_account is not None:
+                if side  == 0:
+                    update_krw = -update_krw
+
+                UserDeposit(
+                        user         = user.id, 
+                        deposit_side = side,
+                        price        = update_krw
+                        ).save()
+                krw_balance.volume += update_krw
+                return HttpResponse(status=200)
+            return JsonResponse({'message':'DOES NOT HAVE BANK ACCOUNT'}, status=400)
+        except KeyError:
+            JsonResponse({'message': 'PERMISSION DENIED'}, status=401)
+
 
 class KakaoLogin(View):
     def post(self, request):
