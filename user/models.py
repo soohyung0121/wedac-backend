@@ -5,11 +5,14 @@ class User(models.Model):
     uid           = models.CharField(max_length = 20)
     email         = models.CharField(max_length = 50)
     kakao_email   = models.CharField(max_length = 50, null=True)
+    platform_id   = models.CharField(max_length = 50, null=True)
     password      = models.CharField(max_length = 200)
     name          = models.CharField(max_length = 20, null=True)
     phone_number  = models.CharField(max_length = 30)
+    auth_number   = models.IntegerField(null=True)
     bank_account  = models.CharField(max_length = 45, null =  True)
     bank_name     = models.CharField(max_length = 20)
+    is_active     = models.BooleanField(default = False)
 
     class Meta:
         db_table = 'users'
