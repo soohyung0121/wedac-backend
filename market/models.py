@@ -20,9 +20,9 @@ class QuoteCurrency(models.Model):
         db_table = 'quote_currencies'
 
 class RealtimeCurrency(models.Model):
-    order_type     = models.CharField(max_length = 1)
-    price          = models.IntegerField()
-    volume         = models.DecimalField(max_digits = 20, decimal_places = 10)
+    order_type     = models.IntegerField()
+    price          = models.DecimalField(max_digits = 20, decimal_places = 7)
+    volume         = models.DecimalField(max_digits = 20, decimal_places = 8)
     base_currency  = models.ForeignKey('BaseCurrency', on_delete = models.SET_NULL, null = True)
     quote_currency = models.ForeignKey('QuoteCurrency', on_delete = models.SET_NULL, null = True)
 

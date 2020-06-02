@@ -28,7 +28,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'market',
+    'django_user_agents',
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+USER_AGENTS_CACHE = 'default'
+
+MIDDLEWARE_CLASSES = [
+    'django_user_agents.middleware.UserAgentMiddleware',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -132,3 +146,17 @@ CORS_ALLOW_HEADERS = (
     'x-csrftoken',
     'x-requested-with',
 )
+
+EMAIL_BACKEND = my_settings.EMAIL['EMAIL_BACKEND']
+EMAIL_USE_TLS = my_settings.EMAIL['EMAIL_USE_TLS']
+EMAIL_PORT = my_settings.EMAIL['EMAIL_PORT']
+EMAIL_HOST = my_settings.EMAIL['EMAIL_HOST']
+EMAIL_HOST_USER = my_settings.EMAIL['EMAIL_HOST_USER']
+EMAIL_HOST_PASSWORD = my_settings.EMAIL['EMAIL_HOST_PASSWORD']
+SERVER_EMAIL = my_settings.EMAIL['SERVER_EMAIL']
+REDIRECT_PAGE = my_settings.EMAIL['REDIRECT_PAGE']
+SMS_ACCESS_KEY = my_settings.SMS['ACCESS_KEY']
+SMS_SECRET_KEY = my_settings.SMS['SECRET_KEY']
+SMS_SERVICE_SECRET = my_settings.SMS['SERVICE_SECRET']
+SMS_SEND_NUMBER = my_settings.SMS['SEND_NUMBER']
+SMS_URI = my_settings.SMS['API_URI']
