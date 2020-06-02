@@ -28,7 +28,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'market',
+    'django_user_agents',
 ]
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
+    }
+}
+
+USER_AGENTS_CACHE = 'default'
+
+MIDDLEWARE_CLASSES = [
+    'django_user_agents.middleware.UserAgentMiddleware',
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -147,5 +161,3 @@ SMS_SECRET_KEY = my_settings.SMS['SECRET_KEY']
 SMS_SERVICE_SECRET = my_settings.SMS['SERVICE_SECRET']
 SMS_SEND_NUMBER = my_settings.SMS['SEND_NUMBER']
 SMS_URI = my_settings.SMS['API_URI']
-
-
