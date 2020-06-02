@@ -3,6 +3,7 @@ from .views import KakaoLogin, SignInView, SignUpView
 from .views import Activate, SmsSend, SmsValidaton, BankAccount
 from .views import OrderView, UpdateWallet
 
+
 urlpatterns = [
         path('/sign-up', SignUpView.as_view()),
         path('/activate/<str:uidb64>/<str:token>', Activate.as_view()),

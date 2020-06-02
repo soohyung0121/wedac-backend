@@ -7,9 +7,9 @@ class User(models.Model):
     kakao_email   = models.CharField(max_length = 50, null=True)
     platform_id   = models.CharField(max_length = 50, null=True)
     password      = models.CharField(max_length = 200)
-    name          = models.CharField(max_length = 20, null=True)
+    name          = models.CharField(max_length = 20, null = True)
     phone_number  = models.CharField(max_length = 30)
-    auth_number   = models.IntegerField(null=True)
+    auth_number    = models.IntegerField(null = True)
     bank_account  = models.CharField(max_length = 45, null =  True)
     bank_name     = models.CharField(max_length = 20)
     is_active     = models.BooleanField(default = False)
@@ -50,6 +50,7 @@ class Order(models.Model):
 
 class Trade(models.Model):
     trade_dtime = models.DateTimeField(auto_now = True)
+    fee_rate    = models.DecimalField(max_digits = 5, decimal_places = 2)
     order       = models.ForeignKey('Order', on_delete = models.SET_NULL, null = True)
 
     class Meta:

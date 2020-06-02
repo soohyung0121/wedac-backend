@@ -178,7 +178,7 @@ class KakaoLogin(View):
         except KeyError:
             return JsonResponse({'message' : 'INVALID_KEY'}, status = 400)
 
-
+          
 class BankAccount(View):
     @login_decorator
     def post(self, request):
@@ -290,3 +290,4 @@ class OrderView(View):
             return JsonResponse({"message":"NOT ENOUGH MONEY"})
         except KeyError:
             return JsonResponse({"message": "INVALID_KEY"}, status=400)
+
