@@ -32,7 +32,7 @@
 <br>
 
 ## DB Modeling
-![](http://bitly.kr/XqkxcGrtK8)
+![](http://bitly.kr/BRv5mjbimu)
 
 ## 구현 기능
 ### 회원가입
