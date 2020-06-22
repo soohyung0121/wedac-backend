@@ -1,4 +1,4 @@
-# Wedac 프로젝트 소개 _ BackEnd
+# Wedac 프로젝트_BackEnd
 암호 화폐 거래소 GDAC 웹사이트 클론 프로젝트입니다.
 <br>
 <br>
@@ -52,4 +52,4 @@
 <br>
 
 ## API documents(POSTMAN)
-추가 
+추가 예정
