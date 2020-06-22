@@ -1,21 +1,21 @@
 # Wedac 프로젝트 소개 _ BackEnd
 암호 화폐 거래소 GDAC 웹사이트 클론 프로젝트입니다.
 <br>
+<br>
 
 ## 개발 인원 및  기간
 - 기간 : 10일(5월 11일 ~ 5월 22일)
 - Back-end members : [Yeeunlee](https://github.com/yenilee), [Soohyungkim](https://github.com/soohyung0121)
 - [Front-end GitHub](https://github.com/wecode-bootcamp-korea/wedac-frontend)
-<br>
 
 ## 데모 영상 
 [![Video Label](http://bitly.kr/sJamEpDUGl)](https://youtu.be/LdF1LG_R4Uo)
 <br>
 
-## 기반
-- 데이터베이스 모델링
-- Django webframework 기반 API 생성(model, view, url 작성)
-- Daily standup meeting, weekly spinrt 등 scrum 방식으로 agile한 팀 프로젝트 진행
+## 진행 방식
+- scrum 방식으로 agile한 팀 프로젝트 진행
+- Daily standup meeting, trello 체크 및 공유 
+- 프로젝트 기간 동안 weekly sprint 2회로 나누어 진행 
 
 ## 기술
 
@@ -52,4 +52,4 @@
 <br>
 
 ## API documents(POSTMAN)
-
+추가 
