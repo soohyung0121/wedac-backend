@@ -52,4 +52,4 @@
 <br>
 
 ## API documents(POSTMAN)
-추가 예정
+https://documenter.getpostman.com/view/10871489/SzzobvrK?version=latest
